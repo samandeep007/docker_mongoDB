@@ -5,7 +5,7 @@ const app = express();
 const port = 3000;
 
 // Set up mongoose connection
-mongoose.connect("mongodb://mongoDb:27017/mydatabase", {});
+mongoose.connect(`${process.env.MONGO_URI}/mydatabase`, {});
 
 const EntrySchema = new mongoose.Schema({
   text: String,
